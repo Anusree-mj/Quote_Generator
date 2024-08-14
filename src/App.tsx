@@ -1,10 +1,13 @@
-import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { routes } from './routes/route';
 
 function App() {
   return (
-    <div className="App">
-     hello
-    </div>
+    <Routes>
+      {routes.map(route => (
+        <Route key={route.path} path={route.path} element={<route.element />} />
+      ))}
+    </Routes>
   );
 }
 
