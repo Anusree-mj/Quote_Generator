@@ -4,10 +4,8 @@ body {
   margin: 0;
   background: linear-gradient(to right, #ffac24, #ffd780);
   font-family: 'Dosis', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 100%;
   color: white
 }
 
