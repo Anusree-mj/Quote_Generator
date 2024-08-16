@@ -49,7 +49,7 @@ const QuoteComponent = () => {
         <Box sx={{
             display: 'flex',
             justifyContent: 'center', alignItems: 'center',
-            minHeight:'90vh',
+            minHeight: '90vh',
         }}>
 
             <Box sx={{
@@ -57,6 +57,9 @@ const QuoteComponent = () => {
                 display: 'flex', flexDirection: 'column',
                 alignItems: 'center', justifyContent: 'center',
                 backgroundColor: '#212226', p: 2,
+                boxShadow: '-4px 7px 7px rgba(37, -14, 0, 1.1)',
+                borderRadius:'0.6rem'
+
             }}>
                 <Box sx={{
                     maxWidth: '100%', width: '30rem', mb: 2,
@@ -84,22 +87,22 @@ const QuoteComponent = () => {
                     }} />
                     <Typography sx={{ textAlign: 'start', ml: 5, mt: 2, mb: 2 }}>{quote?.text}</Typography>
                     <Typography sx={{ textAlign: 'end', mb: 2, mr: 5 }}>- {quote?.author}</Typography>
-                    <FormatQuoteIcon sx={{ alignSelf: 'flex-end', cursor: 'pointer' }} />
-                    <Box sx={{
-                        display: 'flex', mt: 2, width: '30rem', maxWidth: '90%',
-                        alignItems: 'center', justifyContent: 'space-around',
-                    }}>
-                        <Button variant="contained" sx={{
-                            background: 'linear-gradient(to left, #553ddd, #7f69e8)',
-                            borderRadius: '0.4rem', width: '10rem', p: '4px'
-                        }} onClick={getQuotes}
-                        >New Quote</Button>
-                        <Button variant="contained" sx={{
-                            background: 'linear-gradient(to left, #2e6f79, #1b9b96)',
-                            borderRadius: '0.4rem', width: '10rem', p: '4px'
-                        }} onClick={() => { handleAddFavourites(quote!) }}
-                        >Add to favourites</Button>
-                    </Box>
+                    <FormatQuoteIcon sx={{ alignSelf: 'flex-end',}} />
+                </Box>
+                <Box sx={{
+                    display: 'flex', mt: 3, width: '100%',
+                    alignItems: 'center', justifyContent: 'space-around',
+                }}>
+                    <Button variant="contained" sx={{
+                        background: 'linear-gradient(to left, #553ddd, #7f69e8)',
+                        borderRadius: '0.4rem', width: '10rem', p: '4px'
+                    }} onClick={getQuotes}
+                    >New Quote</Button>
+                    <Button variant="contained" sx={{
+                        background: 'linear-gradient(to left, #2e6f79, #1b9b96)',
+                        borderRadius: '0.4rem', width: '10rem', p: '4px'
+                    }} onClick={() => { handleAddFavourites(quote!) }}
+                    >Add to favourites</Button>
                 </Box>
             </Box >
         </Box>
