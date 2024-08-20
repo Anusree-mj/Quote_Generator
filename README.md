@@ -4,7 +4,7 @@ This is a Quote Generator application built with React and TypeScript. It allows
 
 ## UI Demo
 
-![Screenshot 1](/public/ui.png)
+![Screenshot 1](/public/ui.gif)
 
 ## Table of Contents
 
