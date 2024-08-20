@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { QuoteType } from './types';
 import { toast } from 'react-toastify';
+import { quotes } from './quotes';
 
 const QuoteComponent = () => {
     const [quote, setQuote] = useState<QuoteType>()
@@ -19,8 +20,7 @@ const QuoteComponent = () => {
 
     const getQuotes = async () => {
         try {
-            const { data } = await axios.get('https://zenquotes.io/api/quotes');
-            const randomQuote = data[Math.floor(Math.random() * data.length)];
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
             setQuote({
                 text: randomQuote.q,
