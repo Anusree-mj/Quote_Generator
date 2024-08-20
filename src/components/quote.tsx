@@ -19,14 +19,12 @@ const QuoteComponent = () => {
 
     const getQuotes = async () => {
         try {
-            const { data } = await axios.get('https://type.fit/api/quotes');
+            const { data } = await axios.get('https://zenquotes.io/api/quotes');
             const randomQuote = data[Math.floor(Math.random() * data.length)];
-            const cleanedAuthor = randomQuote.author
-                ? randomQuote.author.replace(/, type\.fit$/, '').trim()
-                : '';
+
             setQuote({
-                text: randomQuote.text,
-                author: cleanedAuthor
+                text: randomQuote.q,
+                author: randomQuote.a
             })
         }
         catch (err) {
@@ -58,7 +56,7 @@ const QuoteComponent = () => {
                 alignItems: 'center', justifyContent: 'center',
                 backgroundColor: '#212226', p: 2,
                 boxShadow: '-4px 7px 7px rgba(37, -14, 0, 1.1)',
-                borderRadius:'0.6rem'
+                borderRadius: '0.6rem'
 
             }}>
                 <Box sx={{
@@ -87,7 +85,7 @@ const QuoteComponent = () => {
                     }} />
                     <Typography sx={{ textAlign: 'start', ml: 5, mt: 2, mb: 2 }}>{quote?.text}</Typography>
                     <Typography sx={{ textAlign: 'end', mb: 2, mr: 5 }}>- {quote?.author}</Typography>
-                    <FormatQuoteIcon sx={{ alignSelf: 'flex-end',}} />
+                    <FormatQuoteIcon sx={{ alignSelf: 'flex-end', }} />
                 </Box>
                 <Box sx={{
                     display: 'flex', mt: 3, width: '100%',
